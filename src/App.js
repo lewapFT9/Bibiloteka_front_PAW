@@ -5,6 +5,9 @@ import Login from './log_reg/login';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect, useCallback } from "react";
+import BookDetails from './books/bookDetails';
+import Rents from './rents/rents';
+import Register from './log_reg/register';
 
 function App() {
   return (
@@ -13,8 +16,11 @@ function App() {
         <TokenChecker>
           <Navbar />
           <Routes>
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/books/:id" element={<BookDetails />} />
+            <Route path="/rents" element={<Rents />} />
           </Routes>
         </TokenChecker>
       </Router>
@@ -44,13 +50,15 @@ function TokenChecker({ children }) {
   }, [navigate]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    if (window.location.pathname !== '/register') {
+      const interval = setInterval(() => {
+        checkToken();
+      }, 60000); 
+
       checkToken();
-    }, 60000); 
 
-    checkToken();
-
-    return () => clearInterval(interval);
+      return () => clearInterval(interval);
+    }
   }, [checkToken]);
 
   return <>{children}</>;

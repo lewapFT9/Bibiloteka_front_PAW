@@ -1,0 +1,73 @@
+.book-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-details h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .book-details p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .book-details strong {
+    color: #007bff; 
+  }
+  
+  .book-details button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  
+  .book-details button:hover {
+    background-color: #0056b3;
+  }
+  
+  .book-details button:focus {
+    outline: none;
+  }
+  
+  .book-details button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 768px) {
+    .book-details {
+      padding: 15px;
+    }
+  
+    .book-details h1 {
+      font-size: 22px;
+    }
+  
+    .book-details p {
+      font-size: 16px;
+    }
+  
+    .book-details button {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      margin-right: 0;
+    }
+  }
+  

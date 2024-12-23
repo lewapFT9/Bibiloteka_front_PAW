@@ -1,0 +1,76 @@
+/* Navbar.css */
+.navbar {
+    background-color: #28a745; 
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Ustawiamy flex, żeby przyciski były obok siebie */
+    gap: 15px; /* Odstęp między przyciskami */
+    margin-left: auto; /* Wyrównuje przyciski do prawej */
+  }
+  
+  .nav-item {
+    display: inline-block; /* Zapewnia, że elementy w navbarze będą się układały w poziomie */
+  }
+  
+  .nav-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .nav-btn.logout {
+    background-color: #ff4d4d;
+  }
+  
+  .nav-btn.logout:hover {
+    background-color: #e60000;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column; 
+      text-align: center;
+    }
+  
+    .navbar-nav {
+      flex-direction: column; 
+      gap: 10px; 
+      margin-top: 10px; 
+    }
+  
+    .nav-btn {
+      width: auto; 
+  }
+}

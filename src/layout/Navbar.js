@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom"; 
+import './navbar.css'; 
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -9,23 +10,16 @@ export default function Navbar() {
     navigate("/login"); 
   };
 
-  const styles = {
-    logoutButton: {
-      padding: "5px 10px",
-      backgroundColor: "#ff4d4d",
-      color: "white",
-      border: "none",
-      cursor: "pointer",
-      borderRadius: "5px",
-    },
+  const goToRents = () => {
+    navigate("/rents");
   };
 
   const isLoggedIn = Boolean(localStorage.getItem("token"));
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-dark">
+        <div className="navbar-container">
           <a className="navbar-brand" href="/">Biblioteka</a>
           <button
             className="navbar-toggler"
@@ -38,16 +32,24 @@ export default function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <ul className="navbar-nav ms-auto"> {}
-            {}
-            {isLoggedIn && (
-              <li className="nav-item">
-                <button onClick={handleLogout} style={styles.logoutButton}>
-                  Wyloguj
-                </button>
-              </li>
-            )}
-          </ul>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto">
+              {isLoggedIn && (
+                <>
+                  <li className="nav-item">
+                    <button onClick={handleLogout} className="nav-btn logout">
+                      Wyloguj
+                    </button>
+                  </li>
+                  <li className="nav-item">
+                    <button onClick={goToRents} className="nav-btn rents">
+                      Wypożyczenia
+                    </button>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
         </div>
       </nav>
     </div>
