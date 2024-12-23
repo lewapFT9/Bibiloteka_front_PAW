@@ -46,7 +46,7 @@ const Register = () => {
         throw new Error('Błąd rejestracji: ' + errorData.message || response.statusText);
       }
 
-      const data = await response.json();
+      await response.json();
 
       setSuccess('Rejestracja zakończona sukcesem!');
       setFormData({
