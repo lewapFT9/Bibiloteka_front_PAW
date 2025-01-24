@@ -1,3 +1,5 @@
+# BEFORE YOU TRY TO RUN THE APPLICATION MAKE SURE YOU HAVE INSTALLED NODE.JS AND NPM
+# FULL REQUIREMENTS AND APPLICATION DESCRIPTION ARE AVAILABLE IN THE DOCUMENTATION
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
